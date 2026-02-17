@@ -1,0 +1,13 @@
+<h1><%= @place.name %></h1>
+
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <h3><%= entry.title %></h3>
+      <small><%= entry.occurred_on.strftime("%m/%d/%Y") %></small>
+      <p><%= simple_format(entry.description) %></p>
+    </li>
+  <% end %>
+</ul>
+
+<p><%= link_to "New Post", new_place_entry_path(@place) %></p>
